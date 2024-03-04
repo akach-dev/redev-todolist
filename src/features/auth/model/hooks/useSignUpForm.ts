@@ -18,7 +18,7 @@ const signUpSchema = z.object({
       const hasUppercase = /[A-Z]/.test(value)
       const hasLowercase = /[a-z]/.test(value)
       const hasNumber = /\d/.test(value)
-      const hasSymbol = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-\\/]/.test(value)
+      const hasSymbol = /[!@#$%^&*()_+{}[\]:;<>,.?~\\-\\/]/.test(value)
 
       return hasUppercase && hasLowercase && hasNumber && hasSymbol
     }, 'Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 symbol'),
