@@ -60,7 +60,6 @@ export const useTodoList = () => {
         toast.success(`Status task ${id} change successfully`)
       })
       .catch((e: BaseResponseType<{ message: string }>) => {
-        debugger
         toast.error(e.response.data.message)
       })
   }

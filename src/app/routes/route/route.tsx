@@ -1,4 +1,4 @@
-import { RouteObject, createBrowserRouter, createHashRouter } from 'react-router-dom'
+import { RouteObject, createHashRouter } from 'react-router-dom'
 
 import { PrivateRoute } from '@/app/routes/config/PrivateRoute'
 import { PublicRoute } from '@/app/routes/config/PublicRoute'
