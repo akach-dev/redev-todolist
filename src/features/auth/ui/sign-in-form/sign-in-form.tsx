@@ -52,7 +52,7 @@ export const SignInForm = ({
 
       <div className={s.footer}>
         <Typography>Already have an account?</Typography>
-        <Typography as={Link} to={'/sign-up'}>
+        <Typography as={Link} className={s.link} to={'/sign-up'}>
           Sign Up
         </Typography>
       </div>

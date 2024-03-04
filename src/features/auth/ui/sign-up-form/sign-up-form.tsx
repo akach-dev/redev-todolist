@@ -99,7 +99,7 @@ export const SignUpForm = ({
 
       <div className={s.footer}>
         <Typography>Already have an account?</Typography>
-        <Typography as={Link} to={'/sign-in'}>
+        <Typography as={Link} to={'/sign-in'} variant={'link2'}>
           Log in
         </Typography>
       </div>
