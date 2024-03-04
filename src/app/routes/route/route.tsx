@@ -1,4 +1,4 @@
-import { RouteObject, createBrowserRouter } from 'react-router-dom'
+import { RouteObject, createBrowserRouter, createHashRouter } from 'react-router-dom'
 
 import { PrivateRoute } from '@/app/routes/config/PrivateRoute'
 import { PublicRoute } from '@/app/routes/config/PublicRoute'
@@ -17,7 +17,7 @@ const appRoutes: RouteObject[] = [
   { children: publicRoutes, element: <PublicRoute /> },
 ]
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     children: appRoutes,
     element: <Layout />,
