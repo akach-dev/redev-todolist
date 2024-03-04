@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 26.25rem;
+  margin-inline: auto;
+  padding: 2.0625rem 2.25rem 1.8125rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  > button {
+    align-self: center;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
