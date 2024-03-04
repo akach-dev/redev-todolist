@@ -12,6 +12,19 @@ html {
   box-sizing: border-box;
 }
 
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -35,19 +48,6 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 
   -webkit-text-fill-color: var(--color-light-100);
-}
-
-input,
-button,
-select,
-textarea,
-optgroup,
-option {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  font-style: inherit;
-  color: inherit;
 }
 
 ul,
