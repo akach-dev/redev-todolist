@@ -29,7 +29,7 @@ const TodoList = () => {
         </ul>
       </Card>
       <Button className={s.logout} onClick={logOutHandler} variant={'link'}>
-        Log out
+        Log out user
       </Button>
     </div>
   )
