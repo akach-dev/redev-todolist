@@ -1,7 +1,7 @@
-import { EditableText } from '@/common'
+import { EditableText, withLogger } from '@/common'
 import { TaskEntity } from '@/features'
 
-export const Task = ({
+const Task = ({
   changeTaskStatus,
   changeTaskTitle,
   removeTask,
@@ -28,3 +28,5 @@ export const Task = ({
     />
   )
 }
+
+export default withLogger(Task)

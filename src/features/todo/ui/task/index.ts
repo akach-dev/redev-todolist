@@ -1,1 +1,1 @@
-export * from './task'
+export default './task'
