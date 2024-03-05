@@ -1,9 +1,10 @@
-import { AddItemForm, Button, Card, Typography } from '@/common'
-import { Task, useTodoList } from '@/features/todo'
+import { AddItemForm, Button, Card, Typography, withLogger } from '@/common'
+import { useTodoList } from '@/features/todo'
+import Task from '@/features/todo/ui/task/task'
 
 import s from './todo-list.module.scss'
 
-export const TodoList = () => {
+const TodoList = () => {
   const { addTask, changeTaskStatus, changeTaskTitle, logOutHandler, removeTask, tasks } =
     useTodoList()
 
@@ -33,3 +34,5 @@ export const TodoList = () => {
     </div>
   )
 }
+
+export default withLogger(TodoList)
