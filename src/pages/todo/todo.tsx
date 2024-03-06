@@ -1,10 +1,10 @@
 import { Page } from '@/common'
-import TodoList from '@/features/todo/ui/todo-list/todo-list'
+import { LoggedTodoList } from '@/features'
 
 export const Todo = () => {
   return (
     <Page>
-      <TodoList />
+      <LoggedTodoList />
     </Page>
   )
 }
