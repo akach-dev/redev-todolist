@@ -1,1 +1,1 @@
-export default './todo-list'
+export * from './todo-list'

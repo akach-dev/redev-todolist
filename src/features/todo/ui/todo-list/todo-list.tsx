@@ -1,6 +1,5 @@
 import { AddItemForm, Button, Card, Typography, withLogger } from '@/common'
-import { useTodoList } from '@/features/todo'
-import Task from '@/features/todo/ui/task/task'
+import { LoggedTask, useTodoList } from '@/features'
 
 import s from './todo-list.module.scss'
 
@@ -18,7 +17,7 @@ const TodoList = () => {
 
         <ul>
           {tasks.map(task => (
-            <Task
+            <LoggedTask
               changeTaskStatus={changeTaskStatus}
               changeTaskTitle={changeTaskTitle}
               key={task.id}
@@ -35,4 +34,4 @@ const TodoList = () => {
   )
 }
 
-export default withLogger(TodoList)
+export const LoggedTodoList = withLogger(TodoList)

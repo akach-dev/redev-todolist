@@ -29,4 +29,4 @@ const Task = ({
   )
 }
 
-export default withLogger(Task)
+export const LoggedTask = withLogger(Task)
