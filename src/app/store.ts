@@ -1,13 +1,14 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import { appReducer } from '@/app/reducer'
+import { tasksReducer } from '@/features'
 import { AnyAction, applyMiddleware, combineReducers, legacy_createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware, { ThunkDispatch } from 'redux-thunk'
 
 const rootReducer = combineReducers({
   app: appReducer,
-  // tasks: tasksReducer,
+  tasks: tasksReducer,
 })
 
 export const store = legacy_createStore(
