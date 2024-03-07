@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { Button, Card, Input, Typography } from '@/common'
-import { useSignUpForm } from '@/features'
-import { SignUpFormValues } from '@/features/auth/model/hooks'
+import { SignUpFormValues, useSignUpForm } from '@/features'
 import { FormControlLabel, RadioGroup } from '@mui/material'
 import Radio from '@mui/material/Radio'
 import { clsx } from 'clsx'

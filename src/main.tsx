@@ -1,7 +1,8 @@
 import { Provider } from 'react-redux'
 
-import { AppRouter, store } from '@/app'
+import { AppRouter } from '@/app'
 import { Toast } from '@/common'
+import { store } from '@/store'
 import { createRoot } from 'react-dom/client'
 
 import './styles/index.scss'

@@ -1,3 +1,6 @@
-import { AppRootStateType } from '@/app'
+import { AppRootStateType } from '@/store'
+import { createSelector } from 'reselect'
 
-export const tasks = (state: AppRootStateType) => state.tasks
+export const selectAllTasks = (state: AppRootStateType) => state.tasks
+export const selectTaskById = (taskId: number) =>
+  createSelector(selectAllTasks, tasks => tasks.find(task => task.id === taskId))

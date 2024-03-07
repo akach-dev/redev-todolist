@@ -1,4 +1,4 @@
+export * from '../store/store'
 export * from './routes'
-export * from './store'
+export * from './app-reducer'
 export * from './selectors'
-export * from './reducer'

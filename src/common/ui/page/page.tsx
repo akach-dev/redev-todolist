@@ -9,8 +9,8 @@ export const Page = forwardRef<
   {
     mt?: CSSProperties['marginTop']
   } & ComponentPropsWithoutRef<'section'>
->(({ className, mt = '2.25rem', style, ...rest }, ref) => {
-  const styles: CSSProperties = { marginTop: mt, ...style }
+>(({ className, mt: pt = '2.25rem', style, ...rest }, ref) => {
+  const styles: CSSProperties = { paddingTop: pt, ...style }
 
   return <section className={clsx(s.page, className)} ref={ref} style={styles} {...rest} />
 })

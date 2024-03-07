@@ -4,8 +4,7 @@ import { LoggedTask, useTodoList } from '@/features'
 import s from './todo-list.module.scss'
 
 const TodoList = () => {
-  const { addTask, changeTaskStatus, changeTaskTitle, logOutHandler, removeTask, tasks } =
-    useTodoList()
+  const { addTask, logOutHandler, tasks } = useTodoList()
 
   return (
     <div className={s.todolist}>
@@ -14,16 +13,9 @@ const TodoList = () => {
           Get things done!
         </Typography>
         <AddItemForm addItem={addTask} />
-
         <ul>
           {tasks.map(task => (
-            <LoggedTask
-              changeTaskStatus={changeTaskStatus}
-              changeTaskTitle={changeTaskTitle}
-              key={task.id}
-              removeTask={removeTask}
-              task={task}
-            />
+            <LoggedTask key={task.id} task={task} />
           ))}
         </ul>
       </Card>

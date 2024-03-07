@@ -1,11 +1,16 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
+import { selectAppStatus } from '@/app'
 import { Button, Typography } from '@/common'
+import { useAppSelector } from '@/store'
 
 import s from './add-item-form.module.scss'
 
 export const AddItemForm = ({ addItem }: { addItem: (title: string) => void }) => {
   const [title, setTitle] = useState('')
+  const status = useAppSelector(selectAppStatus)
+
+  const isLoading = status === 'loading'
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value)
@@ -31,7 +36,7 @@ export const AddItemForm = ({ addItem }: { addItem: (title: string) => void }) =
         onKeyDown={onKeyPressHandler}
         value={title}
       />
-      <Button className={s.button} onClick={addItemHandler}>
+      <Button className={s.button} disabled={isLoading} onClick={addItemHandler}>
         <Typography variant={'h3'}>Add Task</Typography>
       </Button>
     </div>

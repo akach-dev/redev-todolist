@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
-import { appReducer } from '@/app/reducer'
+import { appReducer } from '@/app/app-reducer'
 import { tasksReducer } from '@/features'
 import { AnyAction, applyMiddleware, combineReducers, legacy_createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'

@@ -1,5 +1,6 @@
 export * from './page'
 export * from './card'
+export * from './loader'
 export * from './button'
 export * from './typography'
 export * from './input'

@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { restoreState } from '@/common'
+import { selectAppStatus, useAppSelector } from '@/app'
+import { Loader, restoreState } from '@/common'
 import { AppOutletContext } from '@/common/hooks'
 
 export const Layout = forwardRef<
@@ -10,8 +11,11 @@ export const Layout = forwardRef<
 >(({ ...rest }, ref) => {
   const isAuth = !!restoreState('token', '')
 
+  const status = useAppSelector(selectAppStatus)
+
   return (
     <div ref={ref} {...rest}>
+      {status === 'loading' && <Loader />}
       <header></header>
       <main>
         <Outlet context={{ isAuth } satisfies AppOutletContext} />

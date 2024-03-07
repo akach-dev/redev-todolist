@@ -13,3 +13,4 @@ export type TypographyVariant =
   | 'overline'
   | 'subtitle1'
   | 'subtitle2'
+export type Nullable<T> = T | null

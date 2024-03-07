@@ -4,7 +4,7 @@ import { AxiosResponse } from 'axios'
 
 export class TodosService {
   static addTask(data: { title: string }) {
-    return instance.post<null, AxiosResponse<TaskEntity>, { title: string }>('api/todos', data)
+    return instance.post<null, AxiosResponse<TaskResponse>, { title: string }>('api/todos', data)
   }
   static changeTaskStatus(id: number) {
     return instance.patch(`api/todos/${id}/isCompleted`)
