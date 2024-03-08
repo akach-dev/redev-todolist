@@ -1,9 +1,9 @@
-import { AddItemForm, Button, Card, Typography, withLogger } from '@/common'
-import { LoggedTask, useTodoList } from '@/features'
+import { AddItemForm, Button, Card, Typography } from '@/common'
+import { Task, useTodoList } from '@/features'
 
 import s from './todo-list.module.scss'
 
-const TodoList = () => {
+export const TodoList = () => {
   const { addTask, logOutHandler, tasks } = useTodoList()
 
   return (
@@ -15,7 +15,7 @@ const TodoList = () => {
         <AddItemForm addItem={addTask} />
         <ul>
           {tasks.map(task => (
-            <LoggedTask key={task.id} task={task} />
+            <Task key={task.id} task={task} />
           ))}
         </ul>
       </Card>
@@ -25,5 +25,3 @@ const TodoList = () => {
     </div>
   )
 }
-
-export const LoggedTodoList = withLogger(TodoList)
