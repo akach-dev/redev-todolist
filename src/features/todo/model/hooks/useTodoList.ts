@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { useAppDispatch, useAppSelector } from '@/app'
 import { restoreState } from '@/common'
 import { createTask, fetchTasks, selectAllTasks } from '@/features'
+import { useAppDispatch, useAppSelector } from '@/store'
 
 export const useTodoList = () => {
   const navigate = useNavigate()

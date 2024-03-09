@@ -1,13 +1,11 @@
 import { ChangeEvent, useState } from 'react'
 
-import { selectAppStatus } from '@/app'
 import { changeTaskStatus, changeTaskTitle, removeTask, selectTaskById } from '@/features'
 import { useAppDispatch, useAppSelector } from '@/store'
 
 export const useEditableText = (id: number) => {
   const dispatch = useAppDispatch()
-  const task = useAppSelector(selectTaskById(id))
-  const status = useAppSelector(selectAppStatus)
+  const task = useAppSelector(state => selectTaskById(state, id))
 
   const [isDone, setIsDone] = useState(!task?.isCompleted)
   const [editMode, setEditMode] = useState(false)
@@ -17,10 +15,11 @@ export const useEditableText = (id: number) => {
     setEditMode(true)
     setTitle(task?.title ?? '')
   }
+
   const activateViewMode = () => {
     setEditMode(false)
 
-    return dispatch(changeTaskTitle(id, title))
+    return dispatch(changeTaskTitle({ id, title }))
   }
 
   const changeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.currentTarget.value)
@@ -28,7 +27,7 @@ export const useEditableText = (id: number) => {
   const toggleCompleteHandler = () => {
     setIsDone(!isDone)
 
-    return dispatch(changeTaskStatus(id, isDone))
+    return dispatch(changeTaskStatus({ id, isCompleted: isDone }))
   }
 
   const removeTaskHandler = () => dispatch(removeTask(id))
@@ -39,7 +38,6 @@ export const useEditableText = (id: number) => {
     changeTitleHandler,
     editMode,
     isDone: task?.isCompleted,
-    isLoading: status === 'loading',
     removeTaskHandler,
     title,
     toggleCompleteHandler,

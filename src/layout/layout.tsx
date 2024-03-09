@@ -1,9 +1,10 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { selectAppStatus, useAppSelector } from '@/app'
+import { selectAppStatus } from '@/app/appSlice'
 import { Loader, restoreState } from '@/common'
 import { AppOutletContext } from '@/common/hooks'
+import { useAppSelector } from '@/store'
 
 export const Layout = forwardRef<
   ElementRef<'div'>,

@@ -1,6 +1,6 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
-import { selectAppStatus } from '@/app'
+import { selectAppStatus } from '@/app/appSlice'
 import { Button, Typography } from '@/common'
 import { useAppSelector } from '@/store'
 

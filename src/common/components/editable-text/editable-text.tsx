@@ -1,4 +1,6 @@
+import { selectAppStatus } from '@/app/appSlice'
 import { Button, Typography, useEditableText } from '@/common'
+import { useAppSelector } from '@/store'
 import Delete from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
@@ -7,13 +9,16 @@ import { clsx } from 'clsx'
 import s from './editable-text.module.scss'
 
 export const EditableText = ({ taskID }: { taskID: number }) => {
+  const status = useAppSelector(selectAppStatus)
+
+  const isLoading = status === 'loading'
+
   const {
     activateEditModeHandler,
     activateViewMode,
     changeTitleHandler,
     editMode,
     isDone,
-    isLoading,
     removeTaskHandler,
     title,
     toggleCompleteHandler,
