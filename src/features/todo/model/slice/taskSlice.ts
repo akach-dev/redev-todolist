@@ -23,7 +23,8 @@ const slice = createAppSlice({
             return { id, isCompleted }
           } catch (e) {
             handleServerError(e)
-            rejectWithValue(null)
+
+            return rejectWithValue(null)
           }
         },
         {
@@ -45,7 +46,8 @@ const slice = createAppSlice({
             return { id, title }
           } catch (e) {
             handleServerError(e)
-            rejectWithValue(null)
+
+            return rejectWithValue(null)
           }
         },
         {
@@ -68,7 +70,8 @@ const slice = createAppSlice({
             return { task }
           } catch (e) {
             handleServerError(e)
-            rejectWithValue(null)
+
+            return rejectWithValue(null)
           }
         },
         {
@@ -89,7 +92,8 @@ const slice = createAppSlice({
             return { data }
           } catch (e) {
             handleServerError(e)
-            rejectWithValue(null)
+
+            return rejectWithValue(null)
           }
         },
         {
@@ -107,7 +111,8 @@ const slice = createAppSlice({
             return { id }
           } catch (e) {
             handleServerError(e)
-            rejectWithValue(null)
+
+            return rejectWithValue(null)
           }
         },
         {
